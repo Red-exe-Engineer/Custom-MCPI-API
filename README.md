@@ -10,11 +10,7 @@ from mcpi.data import *
 
 print(searchAll(search="sign"))
 
-from mcpi.data import *
-
 print(searchBlock(search="stone"))
-
-from mcpi.data import *
 
 print(searchItem(search="clock"))
 
