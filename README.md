@@ -4,15 +4,18 @@ A new block.py that has every block/item ID and some search functions to help yo
 Github said I should add this.
 Just put it in your MCPI API dorectory and import *
 
-Examples
+Examples:
 
 from mcpi.data import *
+
 print(searchAll(search="sign"))
 
 from mcpi.data import *
+
 print(searchBlock(search="stone"))
 
 from mcpi.data import *
+
 print(searchItem(search="clock"))
 
 blockID = Block("Block of Gold")
