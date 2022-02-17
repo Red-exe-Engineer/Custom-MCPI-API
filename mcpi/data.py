@@ -1,17 +1,17 @@
 # Made by Wallee#8314/Red-exe-Engineer
 # Thanks @Bigjango helping :p
 
-Block = {
+blocks = {
     "Air": [0, 0],
     "Stone": [1, 0],
     "Grass": [2, 0],
     "Dirt": [3, 0],
     "Cobblestone": [4, 0],
     "Wooden Planks": [5, 0],
-    "Saplin":[6, 0],
-    "Oak Saplin": [6, 0],
-    "Spruce Saplin": [6, 1],
-    "Birch Saplin": [6, 2],
+    "Sapling": [6, 0],
+    "Oak Sapling": [6, 0],
+    "Spruce Sapling": [6, 1],
+    "Birch Sapling": [6, 2],
     "Bedrock": [7, 0],
     "Water": [8, 0],
     "Water Stationary": [9, 0],
@@ -290,10 +290,10 @@ Block = {
     "Held Oak Leaves": [254, 0],
     "Held Spruce Leaves": [254, 1],
     "Held Birch Leaves": [254, 2],
-    "Fire": [255, 0]
+    "Fire": [255, 0],
 }
 
-Item = {
+items = {
     "Iron Shovel": 256,
     "Iron Pickaxe": 257,
     "Iron Axe": 258,
@@ -386,42 +386,17 @@ Item = {
     "Steak": 364,
     "Raw Chicken": 365,
     "Cooked Chicken": 366,
-    "Camera": 456
-    }
+    "Camera": 456,
+}
 
-def searchBlock(search="", printName=False):
+Block = blocks
+Item = items
 
-    search = search.lower()
-    IDs = []
 
-    for block in Block:
-
-        blockName = block.lower()
-
-        if search in blockName:
-            IDs.append([block, Block[block]])
-
-            if printName == True:
-                print(f'{block} ({Block[block]})')
-    return(dict(IDs))
-
-def searchItem(search="", printName=False):
-
-    search = search.lower()
-    IDs = []
-
-    for item in Item:
-
-        itemName = item.lower()
-
-        if search in itemName:
-            IDs.append([item, Item[item]])
-
-            if printName == True:
-                print(f'{item} ({Item[item]})')
-    return(dict(IDs))
-
-def searchAll(search="", printName=False):
+def searchBlock(search: str = "", printName: bool = False) -> dict:
+    """
+    Searches a block in the blocks list
+    """
 
     search = search.lower()
     IDs = []
@@ -434,7 +409,17 @@ def searchAll(search="", printName=False):
             IDs.append([block, Block[block]])
 
             if printName == True:
-                print(f'{block} ({Block[block]})')
+                print(f"{block} ({Block[block]})")
+    return dict(IDs)
+
+
+def searchItem(search: str = "", printName: bool = False) -> dict:
+    """
+    Searches an item in the items list.
+    """
+
+    search = search.lower()
+    IDs = []
 
     for item in Item:
 
@@ -444,10 +429,48 @@ def searchAll(search="", printName=False):
             IDs.append([item, Item[item]])
 
             if printName == True:
-                print(f'{item} ({Item[item]})')
-    return(dict(IDs))
+                print(f"{item} ({Item[item]})")
+    return dict(IDs)
+
+
+def searchAll(search: str = "", printName: bool = False) -> dict:
+    """
+    Searches a query in both: Items and blocks
+    """
+
+    search = search.lower()
+    IDs = []
+
+    for block in Block:
+
+        blockName = block.lower()
+
+        if search in blockName:
+            IDs.append([block, Block[block]])
+
+            if printName == True:
+                print(f"{block} ({Block[block]})")
+
+    for item in Item:
+
+        itemName = item.lower()
+
+        if search in itemName:
+            IDs.append([item, Item[item]])
+
+            if printName == True:
+                print(f"{item} ({Item[item]})")
+    return dict(IDs)
+
+
+def main():
+    """
+    Interactive search shell
+    """
+    
+    searchFor = input("Search for a block or item: ")
+    print(searchAll(search=searchFor))
 
 
 if __name__ == "__main__":
-    searchFor = input("Search for a block or item: ")
-    print(searchAll(search=searchFor))
+    main()
