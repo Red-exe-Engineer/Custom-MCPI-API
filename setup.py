@@ -21,7 +21,7 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "mcpi-item-search = mcpi.data:main",
+            "mcpi-item-search = mcpi.data.__init_:main",
         ]
     },
 )
