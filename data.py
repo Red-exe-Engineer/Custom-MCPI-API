@@ -177,7 +177,7 @@ Block = {
     "East Lower Cobblestone Stairs": [67, 1],
     "South Lower Cobblestone Stairs": [67, 3],
     "West Lower Cobblestone Stairs": [67, 0],
-    "North Upper Cobbleston Stairs": [57, 6],
+    "North Upper Cobblestone Stairs": [57, 6],
     "East Upper Cobbleston Stairs": [57, 5],
     "South Upper Cobbleston Stairs": [57, 7],
     "West Upper Cobbleston Stairs": [57, 4],
